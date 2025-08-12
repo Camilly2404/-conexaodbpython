@@ -1,14 +1,14 @@
 # app.py
 
 from bd_config import conectar
-from crud import Categoria
+from crud import categoria
 
 def main():
-    conexao = conectar
+    conexao= conectar()
     if conexao:
         try:
             cursor = conexao.cursor()
-            cursor.execute("SELECT * FROM livros;") #Exemplo de consulta simples
+            cursor.execute("SELECT * FROM livros;")  # Exemplo de consulta simples
 
             resultados = cursor.fetchall()
 
@@ -22,7 +22,7 @@ def main():
             conexao.close()
             print("\nConexão encerrada.")
 
-if__name__ == "__main__":
+if _name_ == "_main_":
     main()
 
 def menu():
@@ -44,6 +44,17 @@ def menu():
             for c in cats:
                 print(f"{c['id']} - {c['nome']} ({c['descricao']})")
         elif opcao == "3":
-            id_cat = int(Input("ID da categoria: "))
+            id_cat = int(input("ID da categoria: "))
             nome = input("Novo nome: ")
             descricao = input("Nova descrição: ")
+            categoria.atualizar_categoria(id_cat, nome, descricao)
+        elif opcao == "4":
+            id_cat = int(input("ID da categoria: "))
+            categoria.deletar_categoria(id_cat)
+        elif opcao == "0":
+            break
+        else:
+            print("Opção inválida!")
+
+if _name_ == "_main_":
+    menu()
