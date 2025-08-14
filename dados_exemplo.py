@@ -14,27 +14,36 @@ from crud.crud_livro import criar_livro as ci_livro
 from crud.crud_livro import listar_livros
 
 def popular():
-    # Categorias (assume que categoria CRUD existe; se ainda não, insira direto em SQL)
-    # Livros
-    ci_livro("Dom Casmuro", "Machado de Assis", isbn="9788575412621", sinopse="Romance Clássico", capa=None,  quantidade=3, categoria_id=None)
-    ci_livro("A hora da Estrela", "clarisse Lispector", isbn="9788535911500", sinopse="Romance", capa=None,  quantidade=2, categoria_id=None)
+    # categorias (assume que categoria CRUD existe; se ainda não, insira direto em sql)
+    # livros
+    ci_livro("Dom Casmurro"< "Machado de Assis", isbn="9788575412621", sinopse="Romance clássico", capa=None, quantidade=3, categoria_id=None)    
+    ci_livro("A Hora da Estrela", "Claricw Lispector", isbn="9788535911500", sinopse="Romance", capa=None, quantidade=2, categoria_id=None)
 
-    # Alunos
-    criar_aluno("João Silva", "joao@escola.local", "senha123", "9A")
-    criar_aluno("Maria Oliveira", "maria@escola.local", "senha123", "8B")
+    # alunos
+    criar_aluno("João Silva", "joao@escola.local","senha123", "9A")
+    criar_aluno("Maria Oliveira", "maria@escola.local","senha123","8B")
 
-    # Professores
-    criar_professores("Carlos Souza", "carlos@escola.local", "senha123", disciplina="História")
-    criar_professores("Patricia Lima", "patricia@escola.local", "senha123", disciplina"Português")
+    # professores
+    criar_professor("Carlos Souza", "carlos@escola.local", "senha123", disciplina="Historia")
+    criar_professor("patricia Lima", "patricia@escola.local","senha123",disciplina="Português")
 
-    # Bibliotecário / Diretor / Supervisor
-    criar_bibliotecário("Ana Bibli", "ana.bibli@escola.local", "senha123" )
-    criar_diretor("João Diretor", "joao.dir@escola.local", "senha123")
-    criar_supervisor("Supervisor X", "supx@escola.local", "senha123")
+    # Bibliotecario / Diretor / supervisor
+    criar_bibliotecario("Ana bibli","anabibli@escola.local","senha123",)
+    criar_diretor("João Diretor", "joaodir@escola.local","senha123",)
+    criar_supervisor("Supervisor x", "supx@escola.local","senha123",)
 
-    # Empréstimo exemplo(aluno 1 pega livro 1)
+    # emprestimo exemplo (aluno 1 pega livro 1)
     criar_emprestimo(1,1)
-    # Reserva exemplo
+    # reserva exemplo
     criar_reserva(2,2)
     # Sugestão
-    criar_sugestao(1,1)
+    criar_sugestao("livro Novo", "Autor x", "Ficção", "Seria bom ter este livro.", aluno_id=1)
+    # Historico
+    criar_historico(1,1)
+    # Relatorio exemplo
+    criar_relatorio("mensal", "2025-08-01", "2025-08-31", gerado_por_bibliotecario=1)
+
+    print("Dados de exemplo inseridos(verifique ids e tabelas).")
+
+if __name__ =="__main__":
+    popular()
