@@ -6,7 +6,8 @@ from mysql_connector import Error
 def conectar():
         try:
             conexao = mysql_connector.connect(
-                    host='localhost:3306',
+                    host='127.0.1'
+                    port=3306,
                     user= 'root', #Troque se necessário
                     password='eec123456@#$',
                     database='sgb' #Nome do seu banco

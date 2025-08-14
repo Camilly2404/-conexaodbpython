@@ -20,8 +20,12 @@ def listar_categorias():
         categorias = cursor.fetchall()
     except Exception as e:
         return{"status": "erro", "mensagem":str(e)}
-    finally
-        conn.close()
+    finally:
+        if conn is not nome:
+            try:
+                conn.close()
+            except Exception as e:
+                print(f"Erro ao fechar conexãõ: {e}")
 
 def atualizar_categoria(id_categoria, novo_nome, nova_descricao):
     try:
