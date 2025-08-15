@@ -1,5 +1,5 @@
 # crud_livro.py
-from bd_config import conectar
+from db_config import conectar
 
 def criar_livro(titulo, autor, isbn=None, sinopse=None, capa=None, quantidade=1, categoria_id=None):
     try:

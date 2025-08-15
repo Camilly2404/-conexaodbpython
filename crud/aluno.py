@@ -1,5 +1,5 @@
 # crud_aluno.py
-from bd_config import conectar
+from db_config import conectar
 from hashlib import sha256
 
 def hash_senha(senha):

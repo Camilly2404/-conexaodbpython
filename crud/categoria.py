@@ -1,4 +1,4 @@
-from bd_config import conectar 
+from db_config import conectar 
 
 def criar_categoria(nome, descricao):
     try:
