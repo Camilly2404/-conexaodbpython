@@ -1,7 +1,7 @@
 -- Criação do banco de dados para gerenciar uma biblioteca escolar - SGB
 create database SGB;
 use SGB;
-create table Alunos(
+create table Aluno(
 id int primary key auto_increment,
 nome varchar(150) not null,
 email varchar(100) not null unique,
@@ -117,3 +117,4 @@ quantidade int not null,
 categoria_id int,
 foreign key (categoria_id) references Categoria (id)
 );
+
